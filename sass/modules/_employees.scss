@@ -1,0 +1,47 @@
+.employee-wrapper {
+	@include employee();
+	height 				: $size__employee-height;
+	width 				: $size__employee-width;
+	position 			: relative;
+
+	&:hover {
+		> .dcchover {
+			//transform 		: translate(0,0);
+			opacity: 1;
+		}
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		text-align: center;
+	}
+}
+
+.employee-row {
+	margin-bottom 	: 1.5em;
+	overflow 		: auto;
+}
+
+.employee-link {
+	margin 			: 0.7em;
+	display 		: inline-block;
+	color 			: $color__text-employee-link;
+	text-decoration : none;
+	border 			: 1px solid $orange;
+
+	&:hover {
+		color 	: $color__text-employee-link-hover;
+	}
+}
+
+.employee-large-image{
+	width: 100%;
+}
+
+.employee-postsby {
+	margin-bottom: $size__default-bot-marg;
+}

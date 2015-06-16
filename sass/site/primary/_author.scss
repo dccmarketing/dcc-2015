@@ -1,0 +1,18 @@
+.author-large-image {
+	width: 100%;
+}
+
+.author-name,
+.author-position {
+	text-align 		: center;
+	margin-bottom 	: 0;
+}
+
+.author-postsby {
+	margin: $size__default-bot-marg 0 0.5em;
+}
+
+.flex-posts {
+	display: flex;
+	flex-flow: row wrap;
+}

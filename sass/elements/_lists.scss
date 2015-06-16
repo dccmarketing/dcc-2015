@@ -1,0 +1,40 @@
+ul, ol {
+	margin : 0 0 1.5em 1.5em;
+	@extend %nobreak;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+dl {
+	@extend %nobreak;
+	margin: 0 0 1.5em;
+}
+
+dt {
+	@extend %pageh3;
+	font-weight: bold;
+	color: $orange;
+}
+
+dd {
+	padding: 0;
+	margin: 0;
+}
+
+dialog {
+	position: inherit;
+	display : inherit;
+	border 	: none;
+}

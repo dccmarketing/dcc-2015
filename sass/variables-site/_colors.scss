@@ -1,0 +1,89 @@
+$light		: #fff;
+$med		: #ccc;
+$dark		: #020202;
+$trans 		: transparent;
+$orange 	: #f05023;
+$gray 		: #404041;
+$gold 		: #b89c6d;
+$red 		: #de2032;
+$transblack : rgba( 0,0,0,0.75 );
+$lightgray 	: #d7d9da;
+$lightergray: #f9f9f9;
+$transgray 	: rgba(64, 64, 65, 0.5);
+
+
+// Backgrounds
+$color__background-body		: $gray;
+$color__background-screen	: #f1f1f1;
+$color__background-hr		: $med;
+$color__background-button	: $trans;
+$color__bg-button-hover		: $orange;
+$color__background-pre		: $gold;
+$color__background-ins		: #fff9c0;
+$color__bg-header 			: $orange;
+$color__bg-input 			: $transblack;
+
+// Text colors
+$color__text-screen				: #21759b;
+$color__text-input				: $light;
+$color__text-input-focus		: $light;
+$color__link					: $light;
+$color__link-visited			: $light;
+$color__link-hover				: $gold;
+$color__text-main				: $light;
+$color__text-social 			: $light;
+$color__text-ins 				: $gray;
+$color__text-button 			: $orange;
+$color__text-button-hover 		: $light;
+$color__site-title-hover 		: $light;
+$color__text-entry-title 		: $light;
+$color__text-read-more 			: $gold;
+$color__text-read-more-hover	: $orange;
+$color__text-entry-content 		: $dark;
+$color__text-employee-link 		: $light;
+$color__text-employee-link-hover: $light;
+$color__item-link-hover 		: $light;
+
+
+// Border colors
+$color__border-button		: $light;
+$color__border-button-hover	: $gold;
+$color__border-input		: $orange;
+$color__border-input-focus 	: $gold;
+$color__border-abbr			: #666;
+$color__border-headshot 	: $light;
+$color__border-circle 		: $light;
+
+// Shadow colors
+$color__shadow-button-text 			: rgba(255, 255, 255, 0.8);
+$color__shadow-button-inner 		: rgba(255, 255, 255, 0.5);
+$color__shadow-button-inner-2 		: rgba(0, 0, 0, 0.05);
+$color__shadow-button-inner-hover 	: rgba(255, 255, 255, 0.8);
+$color__shadow-button-inner-2-hover : rgba(0, 0, 0, 0.02);
+$color__shadow-button-inner-focus 	: rgba(255, 255, 255, 0.5);
+$color__shadow-button-inner-2-focus : rgba(0, 0, 0, 0.15);
+$color__shadow-entry-title 			: $dark;
+
+// Menu colors
+$color__bg-menu-button			: $gold;
+$color__bg-menu-button-mobile 	: $gold;
+$color__bg-menu-item-mobile		: $gold;
+$color__bg-menu-item			: $trans;
+$color__bg-menu-current			: $gold;
+$color__text-menu-mobile		: $light;
+$color__text-menu-mobile-hover 	: $dark;
+$color__text-menu				: $light;
+$color__text-menu-hover			: $light;
+$color__text-menu-button		: $light;
+$color__text-menu-button-mobile : $light;
+$color__text-menu-current		: $light;
+$color__text-menu-current-hover	: $red;
+$color__text-submenu			: $light;
+
+
+// SVGs
+$color__svgfill-socials 				: $light;
+$color__svgfill-socials-hover 			: $gold;
+$color__svgfill-socials-border-hover 	: $gold;
+
+

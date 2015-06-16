@@ -1,0 +1,30 @@
+.authorbox {
+	overflow 		: auto;
+	margin-bottom 	: $size__default-bot-marg;
+}
+
+.authorbox-header {
+	float 		: left;
+	margin-right: 1em;
+}
+
+.authorbox-headshot {
+	background-repeat 	: no-repeat;
+	background-position : center center;
+	width 				: $size__author-headshot;
+	height 				: $size__author-headshot;
+	overflow 			: hidden;
+}
+
+.authorbox-bio {
+	margin-bottom: 1em;
+}
+
+.authorbox-name {
+	text-align 		: center;
+	margin-bottom 	: 0;
+}
+
+.authorbox-blog-link {
+	float: right;
+}

@@ -1,0 +1,45 @@
+@mixin employee() {
+	background-repeat 		: no-repeat;
+	background-position 	: center center;
+	background-size 		: cover;
+	overflow 				: hidden;
+	//border 					: $size__border-circle solid $color__border-circle;
+}
+
+@mixin headergrad() {
+	background 	: $orange; /* Old browsers */
+	background 	: -moz-linear-gradient(top,  $orange 0%, $red 100%); /* FF3.6+ */
+	background 	: -webkit-gradient(linear, left top, right bottom, color-stop(0%,$orange), color-stop(100%,$red)); /* Chrome,Safari4+ */
+	background 	: -webkit-linear-gradient(top,  $orange 0%,$red 100%); /* Chrome10+,Safari5.1+ */
+	background 	: -o-linear-gradient(top,  $orange 0%,$red 100%); /* Opera 11.10+ */
+	background 	: -ms-linear-gradient(top,  $orange 0%,$red 100%); /* IE10+ */
+	background 	: linear-gradient(to bottom,  $orange 0%,$red 100%); /* W3C */
+	filter 		: progid:DXImageTransform.Microsoft.gradient( startColorstr='$orange', endColorstr='$red',GradientType=0 ); /* IE6-9 */
+}
+
+%supasize {
+	font-size: 3em;
+
+	@media (min-width: 43.75em) {
+		font-size 	: 3.75em;
+		line-height : 1.25;
+	}
+
+	@media (min-width: 56.25em) {
+		font-size 	: 4.375em;
+	}
+}
+
+%pageh3 {
+	font-size 	: 1.25em;
+	line-height : 1.13636364;
+
+	@media (min-width: 43.75em) {
+		font-size 	: 1.375em;
+		line-height : 1.25;
+	}
+
+	@media (min-width: 56.25em) {
+		font-size 	: 1.5em;
+	}
+}

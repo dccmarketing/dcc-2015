@@ -1,0 +1,118 @@
+input[type="checkbox"],
+input[type="radio"] {
+	padding: 0; /* Addresses excess padding in IE8/9 */
+}
+
+input[type="search"] {
+	-webkit-appearance 	: textfield; /* Addresses appearance set to searchfield in S5, Chrome */
+	box-sizing 			: content-box;
+
+	&::-webkit-search-decoration { /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
+		-webkit-appearance: none;
+	}
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
+	border 	: 0;
+	padding : 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+textarea {
+	color 	 		: $color__text-input;
+	border 	 		: 1px solid $color__border-input;
+	background-color: $color__bg-input;
+
+	&:focus {
+		color 			: $color__text-input-focus;
+		border-color 	: $color__border-input-focus;
+		outline-color 	: $color__border-input-focus;
+	}
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"] {
+	padding: 3px;
+}
+
+textarea {
+	overflow 		: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
+	padding-left 	: 3px;
+	vertical-align 	: top; /* Improves readability and alignment in all browsers */
+	width 			: 100%;
+}
+
+select {
+	background 			: $orange;
+	color 				: $color__text-input;
+	padding 			: 0.4em 1.5em 0.1em 0.5em;
+	border 				: 0;
+	border-radius 		: 0;
+	-webkit-appearance 	: none;
+	-moz-appearance 	: none;
+	appearance 			: none;
+}
+
+.cats-list {
+	margin-bottom: 1.5em;
+
+	label {
+		position: relative;
+
+		&:after {
+			content 		: "";
+			width 			: 0;
+			height 			: 0;
+			position 		: absolute;
+			right 			: 0.5em;
+			top 			: 50%;
+			margin-top 	 	: -3px;
+			border-width 	: 6px 6px 0 6px;
+			border-style 	: solid;
+			border-color 	: #fff transparent;
+			z-index 		: 0;
+		}
+	}
+
+	.category-select {
+		display 		: inline-block;
+	}
+
+	.cats-list-label {
+		color 			: #fff;
+		font-weight 	: normal;
+		vertical-align 	: top;
+		font-size 		: 1.333em;
+		padding-top 	: 0.1em;
+		display 		: inline-block;
+		margin-right 	: 1em;
+	}
+}
+
+.ninja-forms-form-wrap label {
+	font-weight: normal !important;
+}
+
+.ninja-forms-req-symbol {
+	color: $orange !important;
+}
+
+#ninja_forms_field_4_div_wrap {
+	width: 80%;
+	float: left;
+	text-align: right;
+}
+
+#ninja_forms_field_5_div_wrap {
+	width: 15%;
+	float: right;
+}
+

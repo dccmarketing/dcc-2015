@@ -1,0 +1,51 @@
+.gallery {
+	margin-bottom 	: 1.5em;
+	text-align 		: center;
+}
+
+.gallery-item {
+	display			: inline-block;
+	text-align		: center;
+	vertical-align	: top;
+	width			: 100%;
+}
+
+// Fluid Gallery Columns
+
+@for $i from 2 through 9 {
+	.gallery-columns-#{$i} .gallery-item {
+		@include margcols( $i );
+		margin-bottom 	: $size__default-bot-marg;
+	}
+}
+
+.gallery-caption {
+	display		: block;
+	text-align	: center;
+	margin		: 0;
+}
+
+.gallery-icon {
+
+	&:hover {
+		> img {
+			border: $dccborderhover;
+		}
+	}
+	a {
+		display		: block;
+		text-align	: center;
+		height 		: auto;
+	}
+
+	img {
+		height			: auto;
+		margin-bottom	: 0;
+		border 			: $dccborder;
+	}
+}
+
+div#jp-carousel-comments-loading,
+div#jp-carousel-comments-loading span {
+	display: none !important;
+}

@@ -1,0 +1,106 @@
+p {
+	margin: 0 0 $size__default-bot-marg 0;
+}
+
+b,
+strong {
+	font-weight: bold;
+}
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+blockquote,
+q {
+	quotes: "\“" "\”" "‘" "’";
+
+	&:before {
+		content		: open-quote;
+		font-size	: 1.25em;
+	}
+
+	&:after {
+		content		: close-quote;
+		font-size	: 1.25em;
+	}
+
+	p {
+		display: inline;
+	}
+}
+
+blockquote {
+	margin: 0 $size__default-bot-marg*2 $size__default-bot-marg;
+}
+
+address {
+	margin: 0 0 $size__default-bot-marg;
+}
+
+pre {
+	background		: $color__background-pre;
+	font-family		: $font__pre;
+	@include font-size(1.5);
+	line-height		: $font__line-height-pre;
+	margin-bottom	: 1.6em;
+	max-width		: 100%;
+	overflow		: auto;
+	padding			: 1.6em;
+	text-align 		: left;
+
+	@media only screen and (min-width: $bp__menu-button+1) {
+		padding-left: 251px;
+	}
+}
+
+code,
+kbd,
+samp,
+tt,
+var {
+	@include font-size(1.5);
+	font-family: $font__code;
+}
+
+abbr,
+acronym {
+	border-bottom	: 1px dotted $color__border-abbr;
+	cursor			: help;
+}
+
+mark,
+ins {
+	background		: $color__background-ins;
+	text-decoration	: none;
+	color 			: $color__text-ins;
+	padding 		: 0 0.25em;
+}
+
+sup,
+sub {
+	font-size		: 75%;
+	height			: 0;
+	line-height		: 0;
+	position		: relative;
+	vertical-align	: baseline;
+}
+
+sup {
+	bottom: 1ex;
+}
+
+sub {
+	top: .5ex;
+}
+
+small {
+	font-size: 75%;
+}
+
+big {
+	font-size: 125%;
+}

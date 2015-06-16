@@ -1,0 +1,50 @@
+.nav-social {
+	text-align: center;
+
+	.site-header & {
+		display : none;
+		float 	: left;
+		width 	: 100%;
+
+		@media only screen and (min-width: $bp__menu-button+1) {
+			display : inherit;
+		}
+	}
+
+	.site-footer & {
+
+		@media only screen and (min-width: $bp__menu-button+1) {
+			display: none;
+		}
+	}
+
+	.screen-reader-text,
+	a {
+		@extend %hidetext;
+	}
+
+	.menu-items {
+		@extend %listreset;
+	}
+
+	.menu-item {
+		display 	: inline-block;
+		position 	: relative;
+		margin 		: 0 0.5em;
+		line-height : 1.5em;
+
+		svg {
+			width 		: $font__size-social;
+			height 		: $font__size-social;
+			transition 	: all 0.3s ease-in-out;
+		}
+
+		a {
+			fill: $color__svgfill-socials;
+
+			&:hover {
+				fill: $color__svgfill-socials-hover;
+			}
+		}
+	}
+}

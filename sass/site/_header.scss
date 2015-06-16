@@ -1,0 +1,105 @@
+.site-header {
+	// DO NOT ADD PADDING HERE! - it screws up menus
+	font-family: $font__header;
+
+	@media only screen and (min-width: $bp__menu-button+1) {
+		position 			: fixed;
+		height 				: 100%;
+		width 				: $size__site-sidebar;
+		visibility 			: visible;
+		z-index 			: 1;
+		@include headergrad();
+	}
+}
+
+.header-wrap {
+
+	@media only screen and (max-width: $bp__menu-button) {
+		@include headergrad();
+	}
+}
+
+.site-branding {
+	margin		: 0 auto;
+	max-width	: $size__max-width;
+	padding 	: 1em 0 2em;
+}
+
+.site-title {
+	text-align 	: center;
+	margin 		: 0;
+
+	a {
+		text-decoration : none;
+		text-transform 	: lowercase;
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: $color__site-title-hover;
+
+			> .dccpartone {
+				transform: rotate(-22deg) translate(-20px,-4px);
+			}
+
+			> .dccparttwo {
+				transform: rotate(-22deg);
+			}
+		}
+	}
+
+	.dccpartone {
+		font-family : $font__dccpartone;
+		font-size 	: 140px;
+		display 	: block;
+		transition 	: all 0.3s ease-in-out;
+		font-weight : normal;
+		line-height : 0.75;
+	}
+
+	.dccparttwo {
+		font-size 	: 15px;
+		display 	: block;
+		transition 	: all 0.3s ease-in-out;
+		font-weight : normal;
+	}
+}
+
+.site-description {
+	display: none;
+}
+
+.slidein {
+	animation-duration 			: 1s;
+	transition-timing-function 	: ease-in;
+	animation-fill-mode 		: both;
+	animation-name 				: slideInLeft;
+
+	& .is-exiting  {
+		animation-direction 	: alternate-reverse;
+	}
+}
+
+.fadeIn {
+	position 			: static;
+	animation 			: fadeIn 1s;
+	animation-delay 	: .5s;
+	opacity 			: 0;
+	animation-fill-mode : forwards;
+}
+
+@keyframes slideInLeft {
+	0% {
+		transform: translateX(-100%);
+		visibility: visible;
+	}
+
+	100% {
+		transform: translateX(0);
+	}
+}
+
+@keyframes fadeIn {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}

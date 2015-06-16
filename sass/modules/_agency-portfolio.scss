@@ -1,0 +1,61 @@
+.portfolio-filter-label {
+	color 			: $light;
+	font-weight 	: normal;
+	vertical-align 	: top;
+	font-size 		: 1.333em;
+	padding-top 	: 0.1em;
+}
+
+.portfolio-filters {
+
+	@media only screen and (max-width: $bp__menu-button) {
+		display: none;
+	}
+
+	label {
+		position: relative;
+
+		&:after {
+			content 		: "";
+			width 			: 0;
+			height 			: 0;
+			position 		: absolute;
+			right 			: 0.5em;
+			top 			: 50%;
+			margin-top 	 	: -3px;
+			border-width 	: 6px 6px 0 6px;
+			border-style 	: solid;
+			border-color 	: #fff transparent;
+			z-index 		: 0;
+		}
+	}
+}
+
+.portfolio-filters-select {
+	width: 200px;
+}
+
+.item-wrapper {
+	@include employee();
+	height 				: 300px;
+	width 				: 200px;
+	position 			: relative;
+	margin-bottom 		: 0;
+	border 				: $dccborder;
+
+	@media only screen and (min-width: $bp__laptop) {
+		&:hover {
+
+			> .dcchover {
+				opacity 	: 1;
+				visibility 	: visible;
+			}
+		}
+	}
+}
+
+.item-link {
+	margin 			: 0.5em;
+	display 		: inline-block;
+	text-decoration : none;
+}
