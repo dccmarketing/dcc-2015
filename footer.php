@@ -16,7 +16,7 @@
 
 			get_template_part( 'menu', 'social' );
 
-			get_template_part( 'content', 'footer' );
+			get_template_part( 'template-parts/content', 'footer' );
 
 		?></div><!-- .footer-wrap -->
 

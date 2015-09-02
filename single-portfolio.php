@@ -8,6 +8,13 @@
 get_header();
 
 	?><div id="primary" class="content-area">
+		<div class="breadcrumbs">
+			<div class="wrap-crumbs"><?php
+
+				do_action( 'dcc_2015_breadcrumbs' );
+
+			?></div><!-- .wrap-crumbs -->
+		</div><!-- .breadcrumbs -->
 		<main id="main" class="site-main singlepage" role="main"><?php
 
 		while ( have_posts() ) : the_post();

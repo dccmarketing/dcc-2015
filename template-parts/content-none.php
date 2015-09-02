@@ -9,7 +9,7 @@
 
 ?><section class="no-results not-found">
 	<header class="page-header">
-		<h1 class="page-title"><?php _e( 'Nothing Found', 'dcc-marketing' ); ?></h1>
+		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'dcc-2015' ); ?></h1>
 	</header><!-- .page-header -->
 
 	<div class="page-content"><?php
@@ -18,7 +18,7 @@
 
 			?><p><?php
 
-				printf( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'dcc-marketing' ), esc_url( admin_url( 'post-new.php' ) ) );
+				printf( esc_html__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'dcc-2015' ), esc_url( admin_url( 'post-new.php' ) ) );
 
 			?></p><?php
 
@@ -26,7 +26,7 @@
 
 			?><p><?php
 
-				_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'dcc-marketing' );
+				_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'dcc-2015' );
 
 			?></p><?php
 
@@ -36,7 +36,7 @@
 
 			?><p><?php
 
-				_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'dcc-marketing' );
+				_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'dcc-2015' );
 
 			?></p><?php
 

@@ -4,69 +4,22 @@
 .home {
 
 	.rev_slider_wrapper {
-		margin-bottom: 3em !important;
-	}
+		margin-bottom 	: 3em !important;
 
-	.post {
-		margin 	: 0 auto;
-		width 	: 100%;
-		position: relative;
-
-		@media only screen and (min-width: $bp__menu-button+1) {
-			width 		: 24%;
-			margin-right: 1%;
-			float 		: left;
-
-			&:last-child {
-				margin-right: 0;
-			}
-		}
-	}
-
-	/* .home-post-image,
-	.home-post-content {
-		width 			: 49%;
-		display 		: inline-block;
-		vertical-align 	: middle;
-	}*/
-
-	.home-post-image {
-		margin: 0 auto;
-	 	border 		: $dccborder;
-
-		&:hover {
-			border: $dccborderhover;
-		}
-	}
-
-	.entry-title {
-		font-size 		: 1.5em;
-		margin-bottom 	: 0.25em;
-		word-wrap 		: break-word;
-	}
-
-	.entry-content {
-
-		p {
-			margin-bottom: 0.5em;
-		}
-	}
-
-	.read-more {
-		font-weight: 700;
 	}
 
 	.section-title {
-		@extend %supasize;
-		text-align 		: center;
 		margin-bottom 	: 0.25em;
+		text-align 		: center;
+		width 			: 100%;
 	}
 
 	.section-subtitle {
-		text-align 	: center;
-		font-weight : normal;
 		color 		: $light;
 		font-size 	: $font__subtitle;
+		font-weight : normal;
+		text-align 	: center;
+		width 		: 100%;
 	}
 
 	.categories {
@@ -82,46 +35,46 @@
 
 		.category {
 			@include margcols( 2, 1, 0.778);
-			padding 		: .75em 0;
-			margin-top 		: 0.25em;
-			margin-bottom	: 0.25em;
-			font-size 		: 1.5em;
-			font-weight 	: 700;
-			text-align 		: center;
 			border 			: $dccborder;
 			color 			: $orange;
-			text-decoration : none;
-			transition 		: background 0.3s ease, color 0.3s ease 0.2s;
+			font-size 		: 1.5em;
+			font-weight 	: 700;
+			padding 		: .75em 0;
 			position 		: relative;
+			margin-bottom	: 0.25em;
+			margin-top 		: 0.25em;
+			text-align 		: center;
+			text-decoration : none;
+			transition 		: background $dcctrans, color $dcctrans 0.2s;
 
 			@media only screen and (min-width: $bp__author-posts) {
 				@include margcols( 3, 1, 0.778);
 			}
 
 			&:before {
+				background-color: $orange;
+				bottom 			: 0;
 				content 		: "";
 				position 		: absolute;
-				z-index 		: -1;
-				top 			: 0;
 				left 			: 0;
 				right 			: 0;
-				bottom 			: 0;
-				background-color: $orange;
+				top 			: 0;
 				transform 		: scale(0);
-				transition 		: transform 0.3s ease;
+				transition 		: transform $dcctrans;
+				z-index 		: -1;
 			}
 
 			&:after {
+				background-color: $transblack;
+				bottom 			: 0;
 				content 		: "";
-				position 		: absolute;
-				z-index 		: -1;
-				top 			: 0;
 				left 			: 0;
 				right 			: 0;
-				bottom 			: 0;
-				background-color: $transblack;
+				position 		: absolute;
+				top 			: 0;
 				transform 		: scale(1);
-				transition 		: transform 0.3s ease;
+				transition 		: transform $dcctrans;
+				z-index 		: -1;
 			}
 
 			&:hover {
@@ -139,22 +92,48 @@
 		}
 	}
 
-	.sbi {
-		padding: 0 3em 3em !important;
-	}
-
 	#sb_instagram {
 
 		#sbi_images .sbi_item {
-			border 	: $dccborder;
+			border 			: $dccborder;
+			margin-bottom 	: 1em !important;
 
 			&:hover {
 				border: $dccborderhover;
 			}
 
-			@media only screen and (min-width: $bp__menu-button+1) {
-				width 	: 23.95% !important;
-				margin 	: 0.25em !important;
+			@media only screen and (max-width: 480px) {
+				width: 100% !important;
+			}
+
+			@media only screen and (min-width: 481px) and (max-width: 640px) {
+				width: 48% !important;
+
+				&:nth-child(odd) {
+					margin-right: 2% !important;
+				}
+			}
+
+			@media only screen and (min-width: 641px) and (max-width: $bp__tablet - 1) {
+				width: 48% !important;
+
+				&:nth-child(odd) {
+					margin-right: 2% !important;
+				}
+			}
+
+			@media only screen and (min-width: $bp__tablet) and (max-width: $bp__author-posts - 1) {
+				margin-right: 1% !important;
+				width 		: 32%;
+
+				&:nth-child(3n+3) {
+					margin-right: 0 !important;
+				}
+			}
+
+			@media only screen and (min-width: $bp__author-posts) {
+				margin-right: 1% !important;
+				width 		: 24%;
 			}
 		}
 
@@ -166,10 +145,26 @@
 			background-color: $orange !important;
 		}
 
-
+		img {
+			width: 100%;
+		}
 	}
 
 	.home-section {
 		margin-bottom: 3em;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		@media only screen and (min-width: $bp__author-posts) {
+			display 	: flex;
+			flex-wrap 	: wrap;
+		}
+	}
+
+	.link-home-read {
+		@extend %linkbutton;
+		margin 	: 0 auto;
 	}
 }

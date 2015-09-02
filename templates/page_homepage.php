@@ -7,6 +7,8 @@
  * @package DCC 2015
  */
 
+global $dcc_2015_themekit;
+
 get_header();
 
 putRevSlider( "slider" ); ?>
@@ -14,63 +16,25 @@ putRevSlider( "slider" ); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<section class="home-section">
-				<h1 class="section-title">[marketing] therapy</h1>
-				<h3 class="section-subtitle">We do the dirty work so you don't have to. Blogs away!</h3><?php
+				<h1 class="section-title"><?php esc_html_e( '[marketing] therapy', 'dcc-2015' ); ?></h1>
+				<h3 class="section-subtitle"><?php esc_html_e( 'We do the dirty work so you don\'t have to. Blogs away!', 'dcc-2015' ); ?></h3><?php
 
-				$homeposts = dcc_2015_get_homeposts();
+				$args['order'] 			= 'DESC';
+				$args['posts_per_page'] = 8;
+
+				$homeposts = $dcc_2015_themekit->get_posts( 'post', $args, 'home' );
 
 				while ( $homeposts->have_posts() ) : $homeposts->the_post();
 
-					?><article id="post-<?php the_ID(); ?>" <?php post_class(); ?>><?php
-
-						the_post_thumbnail( 'homeblog', array( 'class' => 'home-post-image' ) );
-
-						?><div class="home-post-content">
-							<header class="entry-header"><?php
-
-								the_title( '<a href="' . get_permalink( get_the_ID() ) . '" class="entry-header-link"><h1 class="entry-title">', '</h1></a>' );
-
-							?></header><!-- .entry-header -->
-							<div class="entry-content"><?php
-
-								the_excerpt();
-
-								?><a class="read-more" href="<?php echo get_permalink( get_the_ID() ); ?>"><?php _e('Read More', 'dcc-2015'); ?></a><?php
-
-								wp_link_pages( array(
-									'before' => '<div class="page-links">' . __( 'Pages:', 'dcc-marketing' ),
-									'after'  => '</div>',
-								) );
-
-							?></div><!-- .entry-content -->
-						</div>
-					</article><!-- #post-## --><?php
+					get_template_part( 'template-parts/content', 'excerpt' );
 
 				endwhile; // end of the loop.
 
-				/* Removed 6/16/2015 per Kara's feedback
-
-				wp_reset_postdata();
-
-				$catargs['hide_empty'] 	= true;
-				$catargs['number'] 		= 6;
-				$catargs['parent'] 		= 0;
-				$cats 					= get_categories( $catargs );
-
-				?><div class="categories"><?php
-
-				foreach ( $cats as $cat ) {
-
-					?><a href="<?php echo get_category_link( $cat->term_id ); ?>" class="category hvr-rectangle-in"><?php echo $cat->name; ?></a><?php
-
-				}
-
-				</div>*/
-
-			?></section>
+				?><a class="link-home-read" href="<?php echo esc_url( get_permalink( get_option('page_for_posts' ) ) ); ?>"><?php esc_html_e( 'Read More Blogs', 'dcc-2015' ); ?></a>
+			</section>
 			<section class="home-section">
-				<h1 class="section-title">smile!</h1>
-				<h3 class="section-subtitle">Can you find yourself in our Instagram feed?</h3><?php
+				<h1 class="section-title"><?php esc_html_e( 'smile!', 'dcc-2015' ); ?></h1>
+				<h3 class="section-subtitle"><?php esc_html_e( 'Can you find yourself in our Instagram feed?', 'dcc-2015' ); ?></h3><?php
 
 				echo do_shortcode( '[instagram-feed]' );
 
@@ -79,4 +43,3 @@ putRevSlider( "slider" ); ?>
 	</div><!-- #primary --><?php
 
 get_footer();
-?>

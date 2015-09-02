@@ -1,44 +1,49 @@
 .site-footer {
-	width 		: 100%;
 	overflow 	: auto;
 	padding 	: 1em;
+	width 		: 100%;
 
 	@media only screen and (min-width: $bp__menu-button+1) {
-		padding-left: calc(235px + 1em);
+		display: none;
 	}
 }
 
 .footer-wrap {
-	max-width 	: $size__max-width;
-	margin 		: 0 auto;
-	width 		: 100%;
 	float 		: left;
+	margin 		: 0 auto;
+	max-width 	: $size__max-width;
+	width 		: 100%;
 }
 
 .easter-egg {
-    /* Dimensions */
-    width: 305px;
-    height: 229px;
+	/* Dimensions */
+	height 	: 229px;
+	width 	: 305px;
 
-    /* Fixed position */
-    position: fixed;
-    left 	: 20%;
-    bottom 	: -229px;
+	/* Fixed position */
+	bottom 	: -229px;
+	left 	: 20%;
+	position: fixed;
 }
 
 .site-info {
-	text-align 	: center;
-	width 		: 100%;
 	float 		: left;
-	overflow 	: auto;
 	font-size 	: $font__size-footer;
 	font-weight : 700;
+	overflow 	: auto;
+	text-align 	: center;
+	width 		: 100%;
 
 	address {
-		margin 			: 0.25em;
-		font-style 		: normal;
-		text-transform 	: uppercase;
 		display 		: inline-block;
+		font-style 		: normal;
+		margin 			: 0.25em;
+		text-transform 	: uppercase;
+
+		&:first-child {
+			border-right 	: 2px solid $light;
+			padding-right 	: 0.65em;
+		}
 	}
 
 	a {
@@ -46,9 +51,9 @@
 	}
 
 	.site-header & {
+		bottom 	: 4em;
 		display : none;
 		position: fixed;
-		bottom 	: 4em;
 
 		@media only screen and (min-width: $bp__menu-button+1) {
 			display: block;

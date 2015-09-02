@@ -164,33 +164,11 @@
 
 .menu-toggle {
 	@extend %menutoggle;
-	font-size: 2em;
+	font-size: 1.75em;
 
 	@media only screen and (min-width: $bp__menu-button+1) {
 		display 	: none;
 		background 	: $color__bg-menu-button;
 		color 		: $color__text-menu-button;
 	}
-}
-
-.site-main .comment-navigation,
-.site-main .paging-navigation,
-.site-main .post-navigation {
-	margin	: 0 0 $size__default-bot-marg;
-	overflow: hidden;
-}
-
-.comment-navigation .nav-previous,
-.paging-navigation .nav-previous,
-.post-navigation .nav-previous {
-	float	: left;
-	width	: 50%;
-}
-
-.comment-navigation .nav-next,
-.paging-navigation .nav-next,
-.post-navigation .nav-next {
-	float		: right;
-	text-align	: right;
-	width		: 50%;
 }

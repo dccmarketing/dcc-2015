@@ -16,7 +16,7 @@ get_header(); ?>
 
 					while ( have_posts() ) : the_post();
 
-						get_template_part( 'content', 'page' );
+						get_template_part( 'templates-parts/content', 'page' );
 
 					endwhile; // end of the loop.
 

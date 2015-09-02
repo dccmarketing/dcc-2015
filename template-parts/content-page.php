@@ -26,7 +26,7 @@
 		the_content();
 
 		wp_link_pages( array(
-			'before' => '<div class="page-links">' . __( 'Pages:', 'dcc-marketing' ),
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'dcc-2015' ),
 			'after'  => '</div>',
 		) );
 

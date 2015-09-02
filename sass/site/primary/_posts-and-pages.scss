@@ -31,10 +31,10 @@
 }
 
 .site-content {
-	width 		: 100%;
+	font-weight : 300;
 	margin 		: 0 auto $size__default-bot-marg;
 	overflow 	: auto;
-	font-weight : 300;
+	width 		: 100%;
 
 	@media only screen and (min-width: $bp__menu-button+1) {
 		padding-left: $size__site-sidebar;
@@ -42,16 +42,15 @@
 }
 
 .content-area {
-	width 		: 100%;
 	float 		: left;
-	max-width 	: $size__max-width;
 	padding 	: 1em;
 	position 	: relative;
+	width 		: 100%;
 
 	@media only screen and (min-width: $bp__tablet) {
-		margin 	: 0;
 		float 	: left;
-		padding : 3em;
+		margin 	: 0;
+		padding : 1.5em 3em 3em;
 	}
 
 	.team &,
@@ -61,18 +60,15 @@
 		}
 	}
 
-	.contact &,
-	.capabilities &,
-	.us &,
 	.single-post & {
-		max-width: $size__max-width2;
+		max-width: $size__max-width;
 	}
 }
 
 .widget-area {
-	width 		: 100%;
 	float 		: left;
 	overflow 	: auto;
+	width 		: 100%;
 }
 
 .entry-header {
@@ -84,10 +80,9 @@
 
 .entry-title,
 .page-title {
-	@extend %supasize;
-	text-decoration : none;
 	font-weight 	: bold;
 	margin-bottom 	: 0.25em;
+	text-decoration : none;
 	text-transform 	: lowercase;
 
 	a {
@@ -96,9 +91,9 @@
 	}
 
 	.error404 & {
-		text-transform 	: none;
-		margin-bottom 	: $size__default-bot-marg;
 		@extend %h1;
+		margin-bottom 	: $size__default-bot-marg;
+		text-transform 	: none;
 	}
 }
 
@@ -142,11 +137,11 @@
 }
 
 .featured-image {
-	width 				: 100%;
-	min-height 			: 300px;
-	background-repeat 	: no-repeat;
 	background-position : center center;
+	background-repeat 	: no-repeat;
 	background-size 	: cover;
+	min-height 			: 300px;
+	width 				: 100%;
 
 	.home & {
 		min-height: 200px;
@@ -155,7 +150,8 @@
 
 .blog,
 .author,
-.archive {
+.archive,
+.home {
 
 	.post {
 		@include employee();
@@ -163,27 +159,36 @@
 		position 	: relative;
 		width 		: 100%;
 
-		@media only screen and (min-width: $bp__tablet) {
-			width 			: 200px;
-			margin-bottom 	: 0.5em;
-			display 		: inline-block;
-			vertical-align 	: top;
-		}
-
-		@media only screen and (max-width: $bp__laptop - 1) {
+		@media only screen and (max-width: $bp__author-posts - 1) {
 			background-image: none !important;
 		}
 
-		@media only screen and (min-width: $bp__laptop) {
-			height 	: 300px;
-			border 	: $dccborder;
+		@media only screen and (min-width: $bp__author-posts) {
+			border 			: $dccborder;
+			height 			: 300px;
+			margin 			: 0 0 1.5em 0;
+			vertical-align 	: top;
+			width 			: 48%;
 
 			&:hover {
 				> .dcchover {
-					opacity 	: 1;
-					opacity 	: 1;
-					visibility 	: visible;
+					opacity 	: 0.33;
 				}
+			}
+		}
+
+		@media only screen and (min-width: $bp__author-posts) and (max-width: $bp__full - 1) {
+			&:nth-child(odd) {
+				margin-right: 4%;
+			}
+		}
+
+		@media only screen and (min-width: $bp__full) {
+			margin-right: 1%;
+			width 		: 24.25%;
+
+			&:nth-of-type(4n) {
+				margin-right: 0;
 			}
 		}
 
@@ -204,15 +209,24 @@
 		.single-post & {
 			border: none;
 		}
+
+		.link-overlay {
+			bottom 	: 0;
+			left 	: 0;
+			opacity : 0;
+			position: absolute;
+			right 	: 0;
+			top 	: 0;
+		}
 	}
 }
 
 .blog-feat-img {
-	max-width 		: 300px;
-	float 			: left;
 	border 			: $dccborder;
-	margin-right	: 1em;
+	float 			: left;
 	margin-bottom 	: $size__default-bot-marg;
+	margin-right	: 1em;
+	transition 		: $dcctrans;
 
 	&:hover {
 		border: $dccborderhover;
@@ -258,39 +272,42 @@
 }
 
 .dcchover {
-	position 		: absolute;
-	bottom 			: 0;
 	background 		: $transblack;
+	bottom 			: 0;
+	position 		: absolute;
 	transition 		: all 0.75s;
 	width 			: 100%;
 
 	@media only screen and (min-width: $bp__laptop) {
-		height 			: 100%;
-		opacity 		: 0;
+		height 		: 100%;
+		opacity 	: 0;
 	}
 
 	.blog &,
 	.author &,
-	.archive & {
-		position: relative;
+	.archive &,
+	.home & {
+		display : block;
+		top 	: 0;
 
-		@media only screen and (max-width: $bp__laptop - 1) {
-			background: none;
+		@media only screen and (max-width: $bp__author-posts - 1) {
+			background 	: none;
+			position 	: relative;
 		}
 
 		@media only screen and (min-width: $bp__tablet) {
-			padding: 0.5em;
+			padding: 1em;
 		}
 
 		@media only screen and (min-width: $bp__laptop) {
-			padding: 1em;
+			opacity: 1;
 		}
 	}
 
 	.item-name,
 	.employee-name {
-		text-align 	: center;
 		margin 		: 0;
+		text-align 	: center;
 
 		@media only screen and (min-width: $bp__laptop) {
 			position: relative;
@@ -300,33 +317,33 @@
 }
 
 .mobile-thumbnail {
+	background-image: none;
+	display 		: none;
 	margin-bottom 	: 0.5em;
 
-	@media only screen and (max-width: $bp__tablet - 1) {
-		background-image: none !important;
-	}
-
-	@media only screen and (min-width: $bp__tablet) and (max-width: $bp__laptop - 1) {
+	@media only screen and (min-width: $bp__tablet) and (max-width: $bp__author-posts - 1) {
 		background-repeat 	: no-repeat;
 		background-size 	: cover;
 		background-position : center center;
+		display 			: block;
 		min-height 			: 200px;
 	}
 
-	@media only screen and (min-width: $bp__laptop) {
+	@media only screen and (min-width: $bp__author-posts) {
 		background-image: none !important;
+		display 		: none;
 	}
 }
 
 .acf-map {
-	width 				: 100%;
-	height 				: 200px;
-	border 				: $dccborder;
-	margin 				: 20px 0;
-	display 			: block;
 	background-position : center center;
 	background-repeat 	: no-repeat;
 	background-size 	: cover;
+	border 				: $dccborder;
+	display 			: block;
+	height 				: 200px;
+	margin 				: 20px 0;
+	width 				: 100%;
 
 	&:hover {
 		border: $dccborderhover;
@@ -352,15 +369,15 @@
 }
 
 .contact-name {
-	margin-bottom 	: 0;
 	font-weight 	: normal;
+	margin-bottom 	: 0;
 }
 
 .cece404 {
 	border 		: $dccborder;
 	float 		: left;
-	width 		: 20%;
 	max-width 	: 200px;
+	width 		: 20%;
 
 	&:hover {
 		border: $dccborderhover;

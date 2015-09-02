@@ -1,6 +1,7 @@
 .authorbox {
-	overflow 		: auto;
+	border-top 		: $dccborder;
 	margin-bottom 	: $size__default-bot-marg;
+	padding-top 	: $size__default-bot-marg;
 }
 
 .authorbox-header {
@@ -27,4 +28,12 @@
 
 .authorbox-blog-link {
 	float: right;
+
+	a {
+		@extend %linkbutton;
+	}
+
+	.dashicons {
+		text-decoration: none;
+	}
 }

@@ -23,32 +23,35 @@ wp_head();
 do_action( 'after_body' );
 
 ?><div id="page" class="hfeed site fadeIn">
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'dcc-2015' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'dcc-2015' ); ?></a>
 
 	<header id="masthead" class="site-header slidein" role="banner">
 		<div class="header-wrap">
-			<div class="site-branding">
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><span class="dccpartone">DCC</span> <span class="dccparttwo">Interactive [marketing] Agency</span></a></h1>
-			</div><!-- .site-branding -->
+			<div class="site-branding"><?php
+
+			if ( is_front_page() && is_home() ) {
+
+				?><h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><span class="dccpartone"><?php esc_html_e( 'DCC', 'dcc-2015' ); ?></span> <span class="dccparttwo"><?php esc_html_e( 'Interactive [marketing] Agency', 'dcc-2015' ); ?></span></a></h1><?php
+
+			} else {
+
+				?><p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><span class="dccpartone"><?php esc_html_e( 'DCC', 'dcc-2015' ); ?></span> <span class="dccparttwo"><?php esc_html_e( 'Interactive [marketing] Agency', 'dcc-2015' ); ?></span></a></p><?php
+
+			}
+
+			?></div><!-- .site-branding -->
 			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php _e( 'Menu', 'dcc-2015' ); ?></button><?php
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'dcc-2015' ); ?></button><?php
 
 					wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) );
 
 			?></nav><!-- #site-navigation --><?php
 
-			get_template_part( 'menu', 'social' );
+			get_template_part( 'menus/menu', 'social' );
 
-			get_template_part( 'content', 'footer' );
+			get_template_part( 'template-parts/content', 'footer' );
 
 		?></div><!-- .header-wrap -->
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content fadeIn">
-		<div class="breadcrumbs"><?php
-
-				if ( function_exists( 'yoast_breadcrumb' ) ) {
-					yoast_breadcrumb();
-				}
-
-			?></div>

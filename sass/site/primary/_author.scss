@@ -1,5 +1,8 @@
 .author-large-image {
-	width: 100%;
+	display 	: block;
+	margin 		: 0 auto;
+	max-width 	: $size__max-width;
+	width 		: 100%;
 }
 
 .author-name,
@@ -13,6 +16,6 @@
 }
 
 .flex-posts {
-	display: flex;
-	flex-flow: row wrap;
+	display 	: flex;
+	flex-flow 	: row wrap;
 }

@@ -18,9 +18,10 @@
 	?></div><!-- .entry-content -->
 	<div class="entry-meta"><?php
 
-		echo apply_filters( 'simplesharing', '' );
+		//echo apply_filters( 'simplesharing', '' );
 
 		dcc_2015_posted_on();
+		dcc_2015_entry_footer();
 
 	?></div><!-- .entry-meta -->
 </article><!-- #post-## -->

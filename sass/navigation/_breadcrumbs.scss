@@ -1,0 +1,28 @@
+.breadcrumbs {
+	margin-bottom 	: $size__default-bot-marg;
+	text-transform 	: lowercase;
+
+	.home & {
+		display: none;
+	}
+
+	span[typeof="v:Breadcrumb"] {
+
+		a {
+			@extend %linkbutton;
+		}
+	}
+
+	.wrap-crumbs {
+		border-bottom 	: $dccborder;
+		padding-bottom 	: $size__default-bot-marg;
+
+		> span {
+			margin-left: -0.5em;
+		}
+	}
+
+	.breadcrumb_last {
+		padding-left: 0.5em;
+	}
+}
